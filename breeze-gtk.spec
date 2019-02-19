@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : breeze-gtk
-Version  : 5.15.0
-Release  : 9
-URL      : https://download.kde.org/stable/plasma/5.15.0/breeze-gtk-5.15.0.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.15.0/breeze-gtk-5.15.0.tar.xz
-Source99 : https://download.kde.org/stable/plasma/5.15.0/breeze-gtk-5.15.0.tar.xz.sig
+Version  : 5.15.1
+Release  : 10
+URL      : https://download.kde.org/stable/plasma/5.15.1/breeze-gtk-5.15.1.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.15.1/breeze-gtk-5.15.1.tar.xz
+Source99 : https://download.kde.org/stable/plasma/5.15.1/breeze-gtk-5.15.1.tar.xz.sig
 Summary  : Breeze widget theme for GTK 2 and 3
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -45,14 +45,14 @@ license components for the breeze-gtk package.
 
 
 %prep
-%setup -q -n breeze-gtk-5.15.0
+%setup -q -n breeze-gtk-5.15.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550030941
+export SOURCE_DATE_EPOCH=1550586228
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -60,7 +60,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1550030941
+export SOURCE_DATE_EPOCH=1550586228
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/breeze-gtk
 cp COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/COPYING.LIB
