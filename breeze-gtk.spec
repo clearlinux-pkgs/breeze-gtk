@@ -6,7 +6,7 @@
 #
 Name     : breeze-gtk
 Version  : 5.15.4
-Release  : 15
+Release  : 16
 URL      : https://download.kde.org/stable/plasma/5.15.4/breeze-gtk-5.15.4.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.15.4/breeze-gtk-5.15.4.tar.xz
 Source99 : https://download.kde.org/stable/plasma/5.15.4/breeze-gtk-5.15.4.tar.xz.sig
