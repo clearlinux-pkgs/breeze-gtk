@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : breeze-gtk
-Version  : 5.16.5
-Release  : 24
-URL      : https://download.kde.org/stable/plasma/5.16.5/breeze-gtk-5.16.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.16.5/breeze-gtk-5.16.5.tar.xz
-Source1 : https://download.kde.org/stable/plasma/5.16.5/breeze-gtk-5.16.5.tar.xz.sig
+Version  : 5.17.0
+Release  : 25
+URL      : https://download.kde.org/stable/plasma/5.17.0/breeze-gtk-5.17.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.17.0/breeze-gtk-5.17.0.tar.xz
+Source1 : https://download.kde.org/stable/plasma/5.17.0/breeze-gtk-5.17.0.tar.xz.sig
 Summary  : Breeze widget theme for GTK 2 and 3
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -45,14 +45,14 @@ license components for the breeze-gtk package.
 
 
 %prep
-%setup -q -n breeze-gtk-5.16.5
+%setup -q -n breeze-gtk-5.17.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1567638088
+export SOURCE_DATE_EPOCH=1571151628
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -65,14 +65,14 @@ export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1567638088
+export SOURCE_DATE_EPOCH=1571151628
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/breeze-gtk
-cp COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/COPYING.LIB
+cp %{_builddir}/breeze-gtk-5.17.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
 pushd clr-build
 %make_install
 popd
@@ -116,6 +116,24 @@ popd
 /usr/share/themes/Breeze-Dark/assets/arrow-up-hover.png
 /usr/share/themes/Breeze-Dark/assets/arrow-up-insensitive.png
 /usr/share/themes/Breeze-Dark/assets/arrow-up.png
+/usr/share/themes/Breeze-Dark/assets/breeze-check-checked-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-check-indeterminate-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-check-unchecked-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-close-active-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-close-hover-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-close-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-maximize-active-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-maximize-hover-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-maximize-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-maximized-active-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-maximized-hover-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-maximized-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-minimize-active-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-minimize-hover-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-minimize-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-radio-checked-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-radio-indeterminate-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/breeze-radio-unchecked-symbolic.svg
 /usr/share/themes/Breeze-Dark/assets/button-active.png
 /usr/share/themes/Breeze-Dark/assets/button-hover.png
 /usr/share/themes/Breeze-Dark/assets/button-insensitive.png
@@ -341,8 +359,7 @@ popd
 /usr/share/themes/Breeze-Dark/gtk-2.0/widgets/scrollbar
 /usr/share/themes/Breeze-Dark/gtk-2.0/widgets/styles
 /usr/share/themes/Breeze-Dark/gtk-2.0/widgets/toolbar
-/usr/share/themes/Breeze-Dark/gtk-3.18/gtk.css
-/usr/share/themes/Breeze-Dark/gtk-3.20/gtk.css
+/usr/share/themes/Breeze-Dark/gtk-3.0/gtk.css
 /usr/share/themes/Breeze/assets/arrow-down-active.png
 /usr/share/themes/Breeze/assets/arrow-down-hover.png
 /usr/share/themes/Breeze/assets/arrow-down-insensitive.png
@@ -375,6 +392,24 @@ popd
 /usr/share/themes/Breeze/assets/arrow-up-hover.png
 /usr/share/themes/Breeze/assets/arrow-up-insensitive.png
 /usr/share/themes/Breeze/assets/arrow-up.png
+/usr/share/themes/Breeze/assets/breeze-check-checked-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-check-indeterminate-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-check-unchecked-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-close-active-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-close-hover-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-close-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-maximize-active-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-maximize-hover-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-maximize-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-maximized-active-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-maximized-hover-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-maximized-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-minimize-active-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-minimize-hover-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-minimize-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-radio-checked-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-radio-indeterminate-symbolic.svg
+/usr/share/themes/Breeze/assets/breeze-radio-unchecked-symbolic.svg
 /usr/share/themes/Breeze/assets/button-active.png
 /usr/share/themes/Breeze/assets/button-hover.png
 /usr/share/themes/Breeze/assets/button-insensitive.png
@@ -600,11 +635,9 @@ popd
 /usr/share/themes/Breeze/gtk-2.0/widgets/scrollbar
 /usr/share/themes/Breeze/gtk-2.0/widgets/styles
 /usr/share/themes/Breeze/gtk-2.0/widgets/toolbar
-/usr/share/themes/Breeze/gtk-3.18/gtk-dark.css
-/usr/share/themes/Breeze/gtk-3.18/gtk.css
-/usr/share/themes/Breeze/gtk-3.20/gtk-dark.css
-/usr/share/themes/Breeze/gtk-3.20/gtk.css
+/usr/share/themes/Breeze/gtk-3.0/gtk-dark.css
+/usr/share/themes/Breeze/gtk-3.0/gtk.css
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/breeze-gtk/COPYING.LIB
+/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
