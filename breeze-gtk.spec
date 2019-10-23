@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : breeze-gtk
-Version  : 5.17.0
-Release  : 25
-URL      : https://download.kde.org/stable/plasma/5.17.0/breeze-gtk-5.17.0.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.17.0/breeze-gtk-5.17.0.tar.xz
-Source1 : https://download.kde.org/stable/plasma/5.17.0/breeze-gtk-5.17.0.tar.xz.sig
+Version  : 5.17.1
+Release  : 26
+URL      : https://download.kde.org/stable/plasma/5.17.1/breeze-gtk-5.17.1.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.17.1/breeze-gtk-5.17.1.tar.xz
+Source1 : https://download.kde.org/stable/plasma/5.17.1/breeze-gtk-5.17.1.tar.xz.sig
 Summary  : Breeze widget theme for GTK 2 and 3
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -23,6 +23,7 @@ BuildRequires : python3
 BuildRequires : python3-dev
 BuildRequires : qtbase-dev mesa-dev
 BuildRequires : sassc
+BuildRequires : util-linux
 
 %description
 # Gnome-breeze
@@ -45,14 +46,14 @@ license components for the breeze-gtk package.
 
 
 %prep
-%setup -q -n breeze-gtk-5.17.0
+%setup -q -n breeze-gtk-5.17.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571151628
+export SOURCE_DATE_EPOCH=1571790047
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -69,10 +70,10 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1571151628
+export SOURCE_DATE_EPOCH=1571790047
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/breeze-gtk
-cp %{_builddir}/breeze-gtk-5.17.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
+cp %{_builddir}/breeze-gtk-5.17.1/COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
 pushd clr-build
 %make_install
 popd
