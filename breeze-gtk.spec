@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : breeze-gtk
-Version  : 5.17.5
-Release  : 30
-URL      : https://download.kde.org/stable/plasma/5.17.5/breeze-gtk-5.17.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.17.5/breeze-gtk-5.17.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.17.5/breeze-gtk-5.17.5.tar.xz.sig
+Version  : 5.18.0
+Release  : 31
+URL      : https://download.kde.org/stable/plasma/5.18.0/breeze-gtk-5.18.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.18.0/breeze-gtk-5.18.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.18.0/breeze-gtk-5.18.0.tar.xz.sig
 Summary  : Breeze widget theme for GTK 2 and 3
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -21,7 +21,6 @@ BuildRequires : buildreq-kde
 BuildRequires : pycairo
 BuildRequires : python3
 BuildRequires : python3-dev
-BuildRequires : qtbase-dev mesa-dev
 BuildRequires : sassc
 
 %description
@@ -45,15 +44,15 @@ license components for the breeze-gtk package.
 
 
 %prep
-%setup -q -n breeze-gtk-5.17.5
-cd %{_builddir}/breeze-gtk-5.17.5
+%setup -q -n breeze-gtk-5.18.0
+cd %{_builddir}/breeze-gtk-5.18.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578423069
+export SOURCE_DATE_EPOCH=1581432876
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -70,21 +69,19 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1578423069
+export SOURCE_DATE_EPOCH=1581432876
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/breeze-gtk
-cp %{_builddir}/breeze-gtk-5.17.5/COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
+cp %{_builddir}/breeze-gtk-5.18.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
 pushd clr-build
 %make_install
 popd
 
 %files
 %defattr(-,root,root,-)
-/usr/lib64/kconf_update_bin/gtkbreeze5.5
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/kconf_update/gtkbreeze5.5.upd
 /usr/share/themes/Breeze-Dark/assets/arrow-down-active.png
 /usr/share/themes/Breeze-Dark/assets/arrow-down-hover.png
 /usr/share/themes/Breeze-Dark/assets/arrow-down-insensitive.png
