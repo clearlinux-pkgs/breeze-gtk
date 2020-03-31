@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : breeze-gtk
-Version  : 5.18.3
-Release  : 34
-URL      : https://download.kde.org/stable/plasma/5.18.3/breeze-gtk-5.18.3.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.18.3/breeze-gtk-5.18.3.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.18.3/breeze-gtk-5.18.3.tar.xz.sig
+Version  : 5.18.4
+Release  : 35
+URL      : https://download.kde.org/stable/plasma/5.18.4/breeze-gtk-5.18.4.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.18.4/breeze-gtk-5.18.4.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.18.4/breeze-gtk-5.18.4.tar.xz.sig
 Summary  : Breeze widget theme for GTK 2 and 3
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -44,15 +44,15 @@ license components for the breeze-gtk package.
 
 
 %prep
-%setup -q -n breeze-gtk-5.18.3
-cd %{_builddir}/breeze-gtk-5.18.3
+%setup -q -n breeze-gtk-5.18.4
+cd %{_builddir}/breeze-gtk-5.18.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583871569
+export SOURCE_DATE_EPOCH=1585673291
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -69,10 +69,10 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1583871569
+export SOURCE_DATE_EPOCH=1585673291
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/breeze-gtk
-cp %{_builddir}/breeze-gtk-5.18.3/COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
+cp %{_builddir}/breeze-gtk-5.18.4/COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
 pushd clr-build
 %make_install
 popd
