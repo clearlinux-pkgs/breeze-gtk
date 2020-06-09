@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : breeze-gtk
-Version  : 5.18.5
-Release  : 37
-URL      : https://download.kde.org/stable/plasma/5.18.5/breeze-gtk-5.18.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.18.5/breeze-gtk-5.18.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.18.5/breeze-gtk-5.18.5.tar.xz.sig
+Version  : 5.19.0
+Release  : 38
+URL      : https://download.kde.org/stable/plasma/5.19.0/breeze-gtk-5.19.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.19.0/breeze-gtk-5.19.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.19.0/breeze-gtk-5.19.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -45,15 +45,15 @@ license components for the breeze-gtk package.
 
 
 %prep
-%setup -q -n breeze-gtk-5.18.5
-cd %{_builddir}/breeze-gtk-5.18.5
+%setup -q -n breeze-gtk-5.19.0
+cd %{_builddir}/breeze-gtk-5.19.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588709478
+export SOURCE_DATE_EPOCH=1591734914
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -69,10 +69,10 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1588709478
+export SOURCE_DATE_EPOCH=1591734914
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/breeze-gtk
-cp %{_builddir}/breeze-gtk-5.18.5/COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
+cp %{_builddir}/breeze-gtk-5.19.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
 pushd clr-build
 %make_install
 popd
@@ -358,6 +358,7 @@ popd
 /usr/share/themes/Breeze-Dark/gtk-2.0/widgets/styles
 /usr/share/themes/Breeze-Dark/gtk-2.0/widgets/toolbar
 /usr/share/themes/Breeze-Dark/gtk-3.0/gtk.css
+/usr/share/themes/Breeze-Dark/settings.ini
 /usr/share/themes/Breeze/assets/arrow-down-active.png
 /usr/share/themes/Breeze/assets/arrow-down-hover.png
 /usr/share/themes/Breeze/assets/arrow-down-insensitive.png
@@ -635,6 +636,7 @@ popd
 /usr/share/themes/Breeze/gtk-2.0/widgets/toolbar
 /usr/share/themes/Breeze/gtk-3.0/gtk-dark.css
 /usr/share/themes/Breeze/gtk-3.0/gtk.css
+/usr/share/themes/Breeze/settings.ini
 
 %files license
 %defattr(0644,root,root,0755)
