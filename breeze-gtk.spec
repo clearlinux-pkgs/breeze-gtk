@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : breeze-gtk
-Version  : 5.19.2
-Release  : 40
-URL      : https://download.kde.org/stable/plasma/5.19.2/breeze-gtk-5.19.2.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.19.2/breeze-gtk-5.19.2.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.19.2/breeze-gtk-5.19.2.tar.xz.sig
+Version  : 5.19.4
+Release  : 41
+URL      : https://download.kde.org/stable/plasma/5.19.4/breeze-gtk-5.19.4.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.19.4/breeze-gtk-5.19.4.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.19.4/breeze-gtk-5.19.4.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -45,15 +45,15 @@ license components for the breeze-gtk package.
 
 
 %prep
-%setup -q -n breeze-gtk-5.19.2
-cd %{_builddir}/breeze-gtk-5.19.2
+%setup -q -n breeze-gtk-5.19.4
+cd %{_builddir}/breeze-gtk-5.19.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1592933571
+export SOURCE_DATE_EPOCH=1597631855
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -65,14 +65,14 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags}  VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1592933571
+export SOURCE_DATE_EPOCH=1597631855
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/breeze-gtk
-cp %{_builddir}/breeze-gtk-5.19.2/COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
+cp %{_builddir}/breeze-gtk-5.19.4/COPYING.LIB %{buildroot}/usr/share/package-licenses/breeze-gtk/39b1ba02ac5852765fa26f08f1f2c19463e83cf9
 pushd clr-build
 %make_install
 popd
