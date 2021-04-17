@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : breeze-gtk
-Version  : 5.20.5
-Release  : 50
-URL      : https://download.kde.org/stable/plasma/5.20.5/breeze-gtk-5.20.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.20.5/breeze-gtk-5.20.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.20.5/breeze-gtk-5.20.5.tar.xz.sig
+Version  : 5.21.4
+Release  : 51
+URL      : https://download.kde.org/stable/plasma/5.21.4/breeze-gtk-5.21.4.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.21.4/breeze-gtk-5.21.4.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.21.4/breeze-gtk-5.21.4.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause LGPL-2.1
@@ -45,15 +45,15 @@ license components for the breeze-gtk package.
 
 
 %prep
-%setup -q -n breeze-gtk-5.20.5
-cd %{_builddir}/breeze-gtk-5.20.5
+%setup -q -n breeze-gtk-5.21.4
+cd %{_builddir}/breeze-gtk-5.21.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1609864631
+export SOURCE_DATE_EPOCH=1618650409
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -69,11 +69,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1609864631
+export SOURCE_DATE_EPOCH=1618650409
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/breeze-gtk
-cp %{_builddir}/breeze-gtk-5.20.5/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/breeze-gtk-5.20.5/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/breeze-gtk-5.21.4/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/breeze-gtk-5.21.4/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/3c3d7573e137d48253731c975ecf90d74cfa9efe
 pushd clr-build
 %make_install
 popd
@@ -359,6 +359,7 @@ popd
 /usr/share/themes/Breeze-Dark/gtk-2.0/widgets/styles
 /usr/share/themes/Breeze-Dark/gtk-2.0/widgets/toolbar
 /usr/share/themes/Breeze-Dark/gtk-3.0/gtk.css
+/usr/share/themes/Breeze-Dark/gtk-4.0/gtk.css
 /usr/share/themes/Breeze-Dark/settings.ini
 /usr/share/themes/Breeze/assets/arrow-down-active.png
 /usr/share/themes/Breeze/assets/arrow-down-hover.png
@@ -637,6 +638,7 @@ popd
 /usr/share/themes/Breeze/gtk-2.0/widgets/toolbar
 /usr/share/themes/Breeze/gtk-3.0/gtk-dark.css
 /usr/share/themes/Breeze/gtk-3.0/gtk.css
+/usr/share/themes/Breeze/gtk-4.0/gtk.css
 /usr/share/themes/Breeze/settings.ini
 
 %files license
