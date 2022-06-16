@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : breeze-gtk
-Version  : 5.24.5
-Release  : 67
-URL      : https://download.kde.org/stable/plasma/5.24.5/breeze-gtk-5.24.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.24.5/breeze-gtk-5.24.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.24.5/breeze-gtk-5.24.5.tar.xz.sig
+Version  : 5.25.0
+Release  : 68
+URL      : https://download.kde.org/stable/plasma/5.25.0/breeze-gtk-5.25.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.25.0/breeze-gtk-5.25.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.25.0/breeze-gtk-5.25.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause LGPL-2.1
@@ -45,15 +45,15 @@ license components for the breeze-gtk package.
 
 
 %prep
-%setup -q -n breeze-gtk-5.24.5
-cd %{_builddir}/breeze-gtk-5.24.5
+%setup -q -n breeze-gtk-5.25.0
+cd %{_builddir}/breeze-gtk-5.25.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1651619651
+export SOURCE_DATE_EPOCH=1655410738
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -69,11 +69,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1651619651
+export SOURCE_DATE_EPOCH=1655410738
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/breeze-gtk
-cp %{_builddir}/breeze-gtk-5.24.5/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/breeze-gtk-5.24.5/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/breeze-gtk-5.25.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/breeze-gtk-5.25.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/3c3d7573e137d48253731c975ecf90d74cfa9efe
 pushd clr-build
 %make_install
 popd
@@ -133,6 +133,7 @@ popd
 /usr/share/themes/Breeze-Dark/assets/breeze-radio-checked-symbolic.svg
 /usr/share/themes/Breeze-Dark/assets/breeze-radio-indeterminate-symbolic.svg
 /usr/share/themes/Breeze-Dark/assets/breeze-radio-unchecked-symbolic.svg
+/usr/share/themes/Breeze-Dark/assets/bullet-symbolic.svg
 /usr/share/themes/Breeze-Dark/assets/button-active.png
 /usr/share/themes/Breeze-Dark/assets/button-hover.png
 /usr/share/themes/Breeze-Dark/assets/button-insensitive.png
@@ -191,12 +192,14 @@ popd
 /usr/share/themes/Breeze-Dark/assets/check-unchecked-insensitive@2.png
 /usr/share/themes/Breeze-Dark/assets/check-unchecked.png
 /usr/share/themes/Breeze-Dark/assets/check-unchecked@2.png
+/usr/share/themes/Breeze-Dark/assets/checkmark-symbolic.svg
 /usr/share/themes/Breeze-Dark/assets/combo-entry-active.png
 /usr/share/themes/Breeze-Dark/assets/combo-entry-button-active.png
 /usr/share/themes/Breeze-Dark/assets/combo-entry-button-insensitive.png
 /usr/share/themes/Breeze-Dark/assets/combo-entry-button.png
 /usr/share/themes/Breeze-Dark/assets/combo-entry-insensitive.png
 /usr/share/themes/Breeze-Dark/assets/combo-entry.png
+/usr/share/themes/Breeze-Dark/assets/dash-symbolic.svg
 /usr/share/themes/Breeze-Dark/assets/entry-active.png
 /usr/share/themes/Breeze-Dark/assets/entry-insensitive.png
 /usr/share/themes/Breeze-Dark/assets/entry.png
@@ -411,6 +414,7 @@ popd
 /usr/share/themes/Breeze/assets/breeze-radio-checked-symbolic.svg
 /usr/share/themes/Breeze/assets/breeze-radio-indeterminate-symbolic.svg
 /usr/share/themes/Breeze/assets/breeze-radio-unchecked-symbolic.svg
+/usr/share/themes/Breeze/assets/bullet-symbolic.svg
 /usr/share/themes/Breeze/assets/button-active.png
 /usr/share/themes/Breeze/assets/button-hover.png
 /usr/share/themes/Breeze/assets/button-insensitive.png
@@ -469,12 +473,14 @@ popd
 /usr/share/themes/Breeze/assets/check-unchecked-insensitive@2.png
 /usr/share/themes/Breeze/assets/check-unchecked.png
 /usr/share/themes/Breeze/assets/check-unchecked@2.png
+/usr/share/themes/Breeze/assets/checkmark-symbolic.svg
 /usr/share/themes/Breeze/assets/combo-entry-active.png
 /usr/share/themes/Breeze/assets/combo-entry-button-active.png
 /usr/share/themes/Breeze/assets/combo-entry-button-insensitive.png
 /usr/share/themes/Breeze/assets/combo-entry-button.png
 /usr/share/themes/Breeze/assets/combo-entry-insensitive.png
 /usr/share/themes/Breeze/assets/combo-entry.png
+/usr/share/themes/Breeze/assets/dash-symbolic.svg
 /usr/share/themes/Breeze/assets/entry-active.png
 /usr/share/themes/Breeze/assets/entry-insensitive.png
 /usr/share/themes/Breeze/assets/entry.png
