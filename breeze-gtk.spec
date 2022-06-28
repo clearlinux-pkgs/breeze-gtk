@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : breeze-gtk
-Version  : 5.25.1
-Release  : 69
-URL      : https://download.kde.org/stable/plasma/5.25.1/breeze-gtk-5.25.1.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.25.1/breeze-gtk-5.25.1.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.25.1/breeze-gtk-5.25.1.tar.xz.sig
+Version  : 5.25.2
+Release  : 70
+URL      : https://download.kde.org/stable/plasma/5.25.2/breeze-gtk-5.25.2.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.25.2/breeze-gtk-5.25.2.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.25.2/breeze-gtk-5.25.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause LGPL-2.1
@@ -45,15 +45,15 @@ license components for the breeze-gtk package.
 
 
 %prep
-%setup -q -n breeze-gtk-5.25.1
-cd %{_builddir}/breeze-gtk-5.25.1
+%setup -q -n breeze-gtk-5.25.2
+cd %{_builddir}/breeze-gtk-5.25.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1655827491
+export SOURCE_DATE_EPOCH=1656442101
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -69,11 +69,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1655827491
+export SOURCE_DATE_EPOCH=1656442101
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/breeze-gtk
-cp %{_builddir}/breeze-gtk-5.25.1/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/breeze-gtk-5.25.1/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/breeze-gtk-5.25.2/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/breeze-gtk-5.25.2/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/breeze-gtk/3c3d7573e137d48253731c975ecf90d74cfa9efe
 pushd clr-build
 %make_install
 popd
