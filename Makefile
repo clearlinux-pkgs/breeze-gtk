@@ -1,5 +1,5 @@
 PKG_NAME := breeze-gtk
-URL = https://download.kde.org/stable/plasma/5.27.10/breeze-gtk-5.27.10.tar.xz
+URL = https://download.kde.org/stable/plasma/6.0.2/breeze-gtk-6.0.2.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common
