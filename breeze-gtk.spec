@@ -9,7 +9,7 @@
 #
 Name     : breeze-gtk
 Version  : 6.0.2
-Release  : 95
+Release  : 96
 URL      : https://download.kde.org/stable/plasma/6.0.2/breeze-gtk-6.0.2.tar.xz
 Source0  : https://download.kde.org/stable/plasma/6.0.2/breeze-gtk-6.0.2.tar.xz
 Source1  : https://download.kde.org/stable/plasma/6.0.2/breeze-gtk-6.0.2.tar.xz.sig
